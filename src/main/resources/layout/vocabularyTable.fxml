@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.1"
+      fx:controller="org.voc5.javafxclient.controllers.VocabularyTableController">
+    <children>
+        <Button mnemonicParsing="false" onAction="#back" text="&lt; Back to main page"/>
+        <HBox spacing="10.0">
+            <children>
+                <TextField promptText="Enter a value to filter for" HBox.hgrow="ALWAYS" fx:id="filterField"/>
+                <Button mnemonicParsing="false" text="Add new" onAction="#addNew"/>
+            </children>
+        </HBox>
+        <TableView fx:id="tableView" editable="true" minWidth="600.0">
+            <columns>
+                <TableColumn fx:id="questionColumn" prefWidth="213.0" text="Question"/>
+                <TableColumn fx:id="answerColumn" prefWidth="199.0" text="Answer"/>
+                <TableColumn fx:id="languageColumn" prefWidth="94.0" text="Language"/>
+                <TableColumn fx:id="phaseColumn" prefWidth="90.0" text="Phase"/>
+            </columns>
+        </TableView>
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+</VBox>

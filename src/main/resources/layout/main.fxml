@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" minHeight="300.0" minWidth="300.0" spacing="10.0"
+      xmlns="http://javafx.com/javafx/11.0.1" fx:controller="org.voc5.javafxclient.controllers.MainController">
+    <children>
+        <Label text="Logged in as:" fx:id="loggedInAs"/>
+        <Button mnemonicParsing="false" text="Learn" onAction="#learn"/>
+        <Button mnemonicParsing="false" text="Edit Vocabulary" onAction="#edit"/>
+        <Button mnemonicParsing="false" text="Log out" onAction="#logOut"/>
+    </children>
+</VBox>

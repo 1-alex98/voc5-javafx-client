@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1"
+      fx:controller="org.voc5.javafxclient.controllers.LearnController">
+    <children>
+        <GridPane hgap="10.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="100.0"/>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="100.0"/>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" vgrow="ALWAYS"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS"/>
+            </rowConstraints>
+            <children>
+                <Label text="Question" GridPane.rowIndex="1"/>
+                <Label text="Your answer" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label text="Correct answer" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <TextArea fx:id="questionTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true"
+                          GridPane.rowIndex="2"/>
+                <TextArea fx:id="answerTextArea" prefHeight="200.0" prefWidth="200.0" wrapText="true"
+                          GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <TextArea fx:id="solutionTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" visible="false"
+                          wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0"
+                      GridPane.columnIndex="2" GridPane.rowIndex="3">
+                    <children>
+                        <Button fx:id="inCorrectButton" mnemonicParsing="false" onAction="#inCorrect" text="Incorrect"
+                                visible="false"/>
+                        <Button fx:id="correctButton" mnemonicParsing="false" onAction="#correct" text="Correct"
+                                visible="false"/>
+                    </children>
+                </HBox>
+                <Label fx:id="phaseLabel" text="Phase: " GridPane.columnIndex="1"/>
+                <Button mnemonicParsing="false" onAction="#back" text="&lt; Back to main"/>
+                <Button fx:id="revealButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false"
+                        onAction="#reveal" text="Reveal" GridPane.columnIndex="2" GridPane.halignment="CENTER"
+                        GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
+                <Label fx:id="languageLabel" text="Language:" GridPane.columnIndex="2"/>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+        </GridPane>
+    </children>
+</VBox>
