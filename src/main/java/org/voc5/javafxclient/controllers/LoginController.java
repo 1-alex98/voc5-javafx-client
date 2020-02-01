@@ -18,6 +18,7 @@ public class LoginController {
     public PasswordField passwordField;
     public Label errorLabel;
     public CheckBox rememberMe;
+    public TextField serverNameTextField;
 
     public void initialize() {
         errorLabel.managedProperty().bind(errorLabel.visibleProperty());
@@ -31,6 +32,7 @@ public class LoginController {
         if (preferences.getPassword() != null) {
             passwordField.setText(preferences.getPassword());
         }
+        serverNameTextField.setText(preferences.getServerName());
     }
 
     public void register(ActionEvent actionEvent) {
@@ -38,6 +40,9 @@ public class LoginController {
     }
 
     public void login(ActionEvent actionEvent) throws IOException {
+        Preferences preferences = PreferenceService.getInstance().getPreferences();
+        preferences.setServerName(serverNameTextField.getText());
+        PreferenceService.getInstance().storeInBackGround();
         login(emailField.getText(), passwordField.getText(), rememberMe.isSelected());
     }
 

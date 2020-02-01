@@ -4,6 +4,7 @@ public class Preferences {
     private boolean remember;
     private String email;
     private String password;
+    private String serverName = "https://api.voc5.org";
 
     public boolean isRemember() {
         return remember;
@@ -27,5 +28,13 @@ public class Preferences {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getServerName() {
+        return serverName;
+    }
+
+    public void setServerName(String serverName) {
+        this.serverName = serverName;
     }
 }

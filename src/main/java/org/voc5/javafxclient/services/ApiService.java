@@ -13,7 +13,7 @@ public class ApiService {
     public static final MediaType JSON
             = MediaType.get("application/json; charset=utf-8");
     private static ApiService ourInstance = new ApiService();
-    private String url = "https://api.voc5.org/";
+    private String url;
     private boolean loggedIn = false;
     private OkHttpClient plainClient = new OkHttpClient();
     private OkHttpClient loggedInClient;
@@ -32,6 +32,7 @@ public class ApiService {
     }
 
     public CompletableFuture<String> login(String email, String password) {
+        url = PreferenceService.getInstance().getPreferences().getServerName() + "/";
         return CompletableFuture.supplyAsync(() -> {
             Request request = new Request.Builder()
                     .url(url + "login")
